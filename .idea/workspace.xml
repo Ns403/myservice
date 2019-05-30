@@ -5,22 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45faf8b3-8452-4d65-aab0-88b0d99f7dad" name="Default Changelist" comment="首次提交！springboot环境！">
-      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/utils/TimeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/result/Msg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-am.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-cz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-jp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-pt_BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-sv_SE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-zh_CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-zh_TW.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwdservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/Vo/FileInfoVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/Vo/FileInfoVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/bean/UploadFilesInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/bean/UploadFilesInfoExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/dao/UploadFilesInfoMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/resources/mapper/UploadFilesInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/mapper/UploadFilesInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/src/test/java/com/myservice/BwdServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/src/test/java/com/myservice/BwdServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfoExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfoExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfoExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfoExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfoExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/bean/UploadFilesInfoExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/dao/UploadFilesInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/dao/UploadFilesInfoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/mapper/UploadFilesInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/mapper/UploadFilesInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/controllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/Vo/FileInfoVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/Vo/FileInfoVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/controller/controllerIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/service/impl/UploadFilesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/com/myservice/service/impl/UploadFilesServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwdservice/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwdservice/target/test-classes/com/myservice/BwdServiceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bwdservice/target/test-classes/com/myservice/BwdServiceApplicationTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bwdservice/target/" />
@@ -30,6 +54,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -51,31 +78,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/UploadFilesService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="19" selection-start-line="19" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="270">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,12 +90,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwdservice/src/test/java/com/myservice/BwdServiceApplicationTests.java">
+        <entry file="file://$PROJECT_DIR$/bwdservice/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="40" column="21" lean-forward="true" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+            <state relative-caret-position="373">
+              <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding>
-                <marker date="1559198880510" expanded="true" signature="1206:1375" ph="..." />
+                <element signature="imports" expanded="true" />
+                <element signature="e#771#772#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,50 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/utils/TimeUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Software/Java/jdk1.8.0_201/src.zip!/java/util/Calendar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="430" selection-start-line="430" selection-end-line="432" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/Vo/FileInfoVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/bean/UploadFilesInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="75" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/dao/UploadFilesInfoMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="69" column="51" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="51" />
+            <state relative-caret-position="120">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,115 +125,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/mapper/UploadFilesInfoMapper.xml">
+        <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="98" column="10" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+            <state relative-caret-position="118">
+              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
               <folding>
-                <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
-                <element signature="e#287#479#0" />
-                <element signature="n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="e#1094#1286#0" />
-                <element signature="n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#when#0;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#when#1;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#when#2;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#when#3;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#foreach#0;n#when#3;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="e#2440#2632#0" />
-                <element signature="n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#when#0;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#when#1;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#when#2;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#when#3;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#foreach#0;n#when#3;n#choose#0;n#foreach#0;n#trim#0;n#if#0;n#foreach#0;n#where#0;n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#sql#2;n#mapper#0;n#!!top" />
-                <element signature="e#3780#3972#0" />
-                <element signature="n#select#0;n#mapper#0;n#!!top" />
-                <element signature="e#4182#4374#0" />
-                <element signature="n#if#0;n#select#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#1;n#select#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#select#0;n#mapper#0;n#!!top" />
-                <element signature="n#select#1;n#mapper#0;n#!!top" />
-                <element signature="e#4791#4983#0" />
-                <element signature="e#10#91#1" />
-                <element signature="n#delete#0;n#mapper#0;n#!!top" />
-                <element signature="e#5191#5383#0" />
-                <element signature="e#10#81#0" />
-                <element signature="n#delete#1;n#mapper#0;n#!!top" />
-                <element signature="e#5566#5758#0" />
-                <element signature="e#10#43#0" />
-                <element signature="n#if#0;n#delete#1;n#mapper#0;n#!!top" />
-                <element signature="n#insert#0;n#mapper#0;n#!!top" />
-                <element signature="e#5979#6171#0" />
-                <element signature="e#10#393#0" />
-                <element signature="e#140#393#0" />
-                <element signature="e#147#393#0" />
-                <element signature="n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="e#6659#6851#0" />
-                <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#7;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#if#7;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#select#2;n#mapper#0;n#!!top" />
-                <element signature="e#8331#8523#0" />
-                <element signature="e#10#52#1" />
-                <element signature="n#if#0;n#select#2;n#mapper#0;n#!!top" />
-                <element signature="n#update#0;n#mapper#0;n#!!top" />
-                <element signature="e#8740#8932#0" />
-                <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#3;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#7;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#update#0;n#mapper#0;n#!!top" />
-                <element signature="n#update#1;n#mapper#0;n#!!top" />
-                <element signature="e#10017#10209#0" />
-                <element signature="e#10#460#0" />
-                <element signature="n#if#0;n#update#1;n#mapper#0;n#!!top" />
-                <element signature="n#update#2;n#mapper#0;n#!!top" />
-                <element signature="e#10878#11070#0" />
-                <element signature="e#10#528#0" />
-                <element signature="n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#if#0;n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#if#1;n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#if#2;n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#if#3;n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#if#4;n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#if#5;n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#if#6;n#set#0;n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#update#3;n#mapper#0;n#!!top" />
-                <element signature="e#11935#12127#0" />
-                <element signature="e#10#407#0" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#1310#1642#0" />
               </folding>
             </state>
           </provider>
@@ -282,6 +164,8 @@
     <findStrings>
       <find>add</find>
       <find>=null</find>
+      <find>Project name</find>
+      <find>Dashboard</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -292,7 +176,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/helloWorld.java" />
-        <option value="$PROJECT_DIR$/bwdservice/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/synchronizationTest.java" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/resources/mbg.tld" />
@@ -301,8 +184,6 @@
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/UploadFilesService.java" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/controllerIndex.java" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/BwdServiceApplication.java" />
-        <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java" />
-        <option value="$PROJECT_DIR$/bwdservice/pom.xml" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/dao/UploadFilesInfoMapper.java" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/bean/UploadFilesInfo.java" />
@@ -310,7 +191,14 @@
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/utils.fxml" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/utils/TimeUtils.java" />
         <option value="$PROJECT_DIR$/bwdservice/src/test/java/com/myservice/BwdServiceApplicationTests.java" />
+        <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/indexController.java" />
         <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/Vo/FileInfoVo.java" />
+        <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/Result/Msg.java" />
+        <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/result/Msg.java" />
+        <option value="$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/bwdservice/pom.xml" />
+        <option value="$PROJECT_DIR$/bwdservice/src/main/resources/templates/index.html" />
       </list>
     </option>
   </component>
@@ -363,10 +251,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-48" />
-    <option name="y" value="404" />
-    <option name="width" value="2613" />
-    <option name="height" value="1574" />
+    <option name="x" value="70" />
+    <option name="y" value="210" />
+    <option name="width" value="2492" />
+    <option name="height" value="1320" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -406,73 +294,6 @@
               <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="Vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -482,37 +303,37 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="myservice" type="462c0819:PsiDirectoryNode" />
               <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="easyui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="myservice" type="462c0819:PsiDirectoryNode" />
               <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="easyui" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="myservice" type="462c0819:PsiDirectoryNode" />
               <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myservice" type="462c0819:PsiDirectoryNode" />
-              <item name="bwdservice" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -529,7 +350,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bwdservice/src/main/resources/static/jQuery" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -538,11 +359,18 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15110357" />
     <property name="project.structure.side.proportion" value="0.471" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\idea\myservice\bwdservice\src\main\resources\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Workspace\idea\myservice\bwdservice\src\main\resources\static\easyui" />
       <recent name="D:\Workspace\idea\myservice\bwdservice\src\main\resources\static\jQuery" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.myservice.Result" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.myservice.service.impl" />
@@ -562,7 +390,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BwdServiceApplicationTests.contextLoads">
+  <component name="RunManager" selected="Spring Boot.BwdServiceApplication">
     <configuration name="BwdServiceApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bwdservice" />
       <option name="PACKAGE_NAME" value="com.myservice" />
@@ -629,7 +457,7 @@
     <frame x="-7" y="-7" width="1659" height="899" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23955084" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23955084" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -637,7 +465,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3293011" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3293011" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293011" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39919356" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -728,7 +556,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/controllerIndex.java</url>
+          <url>file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/IndexController.java</url>
           <line>24</line>
           <properties />
           <option name="timeStamp" value="10" />
@@ -738,6 +566,12 @@
           <line>41</line>
           <properties />
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -794,13 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -873,23 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bwdservice/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/controllerIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Software/Java/jdk1.8.0_201/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1770">
@@ -912,16 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3515">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/UploadFilesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -957,33 +757,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="jar://C:/Software/Java/jdk1.8.0_201/src.zip!/java/util/Calendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="430" selection-start-line="430" selection-end-line="432" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="19" selection-start-line="19" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/utils/TimeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bwdservice/src/test/java/com/myservice/BwdServiceApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1008,20 +781,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/Vo/FileInfoVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/mapper/UploadFilesInfoMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="98" column="10" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+        <state relative-caret-position="-304">
+          <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
           <folding>
             <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
             <element signature="e#287#479#0" />
@@ -1127,6 +890,165 @@
             <element signature="n#update#3;n#mapper#0;n#!!top" />
             <element signature="e#11935#12127#0" />
             <element signature="e#10#407#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/UploadFilesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/Vo/FileInfoVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Software/Java/jdk1.8.0_201/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="430" selection-start-line="430" selection-end-line="432" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/utils/TimeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/service/impl/UploadFilesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/static/bootstrap/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.7.RELEASE/spring-web-5.1.7.RELEASE.jar!/org/springframework/web/bind/annotation/RestController.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.7.RELEASE/spring-web-5.1.7.RELEASE-sources.jar!/org/springframework/web/bind/annotation/RestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/result/Msg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/themes/icon.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/license_freeware.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="13" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/changelog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/java/com/myservice/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/plugins/jquery.accordion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/static/easyui/locale/easyui-lang-af.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="189" selection-start-line="189" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwdservice/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1310#1642#0" />
           </folding>
         </state>
       </provider>

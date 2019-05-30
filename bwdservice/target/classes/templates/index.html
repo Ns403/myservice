@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>MyService</title>
-    <script src="/jquery/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/easyloader.js"></script>
+    <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css">
 </head>
-<body>
-<h1>文件系统</h1>
-<button class="btn btn-default">上传</button>
+<body class="easyui-layout">
+<div data-options="region:'north',border:false" style="height:65px;background:#979797;padding:1px;"><h2>My Service</h2></div>
+<div data-options="region:'west',split:false,title:'菜单'" class="easyui-accordion" style="width:140px;background:#979797;padding:10px;">
+        <div title="About" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;height:100px;">
+            <h3 style="color:#0099FF;">Accordion for jQuery</h3>
+            <p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.</p>
+        </div>
+        <div title="Help" data-options="iconCls:'icon-help'" style="padding:10px;">
+            <p>The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.</p>
+        </div>
+        <div title="Ajax" data-options="href:'http://www.baidu.com'" style="padding:10px">
+    </div>
+
+</div>
+<div data-options="region:'east',split:true,collapsed:true,title:'工具'" style="width:100px;background:#979797;padding:10px;">east region</div>
+<div data-options="region:'south',border:false,title:'文件信息'" style="height:100px;background:#979797;padding:1px;">test</div>
+<div data-options="region:'center'" class="easyui-tabs">
+        <div title="主页" style="padding:10px;background:#979797">
+            <p style="font-size:14px"><h1>欢迎来到寜的My Service</h1></p>
+
+        </div>
+<!--    其他标签页-->
+<!--        <div title="My Documents" style="padding:10px">
+            <ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true"></ul>
+        </div>
+        <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+            This is the help content.
+        </div>-->
+
+</div>
 </body>
 </html>
