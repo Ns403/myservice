@@ -11,4 +11,10 @@ public interface UploadFilesService {
      */
     List<FileInfoVo> getFilesInfo();
 
+    /**
+     * 上传文件
+     * @param fileInfoVo 返回文件信息
+     * @return 0失败，1成功
+     */
+    int uploadFile(FileInfoVo fileInfoVo);
 }

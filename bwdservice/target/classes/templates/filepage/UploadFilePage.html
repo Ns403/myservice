@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../static/js/UploadFilePage.js"></script>
+</head>
+<body>
+
+<form id="ff" method="post" style="padding: 60px;text-align:center">
+    <div style="margin-bottom:20px">
+        <input id="file_name_id" class="easyui-textbox" name="fileName" style="width:40%" data-options="label:'文件名:'">
+    </div>
+    <div style="margin-bottom:20px">
+        <input id="file_id" class="easyui-filebox" name="file" style="width:40%"
+               data-options="label:'文件:',buttonText:'上传',onChange:fileNameText(newValue,oldValue)">
+    </div>
+    <div style="margin-bottom:20px">
+        <select class="easyui-combobox" name="status" label="文件类型" style="width:40%" data-options="readonly:true">
+            <option value=0>文档</option>
+            <option value=2>图片</option>
+            <option value=3>安装文件</option>
+        </select>
+    </div>
+    <div style="margin-bottom:20px">
+        <select class="easyui-combobox" name="status" label="显示状态" style="width:40%">
+            <option value=0>显示</option>
+            <option value=1>隐藏</option>
+        </select>
+    </div>
+    <div style="margin-bottom:20px">
+        <input class="easyui-datetimebox" name="delDate" style="width:40%" data-options="label:'过期时间:'">
+    </div>
+</form>
+<div style="text-align:center;padding:5px 0">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width:80px">Submit</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width:80px">Clear</a>
+</div>
+<script type="text/javascript" src="/js/UploadFilePage.js"></script>
+</body>
+</html>

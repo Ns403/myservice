@@ -56,12 +56,13 @@
             <version>1.16.20</version>
             <scope>provided</scope>
         </dependency>
+<!--       分页插件-->
         <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.10</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.pagehelper</groupId>-->
+<!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+<!--            <version>1.2.10</version>-->
+<!--        </dependency>-->
 
 <!--        easyUI配置-->
         <!-- https://mvnrepository.com/artifact/net.sourceforge.nekohtml/nekohtml -->
@@ -81,6 +82,13 @@
             <groupId>org.apache.xmlgraphics</groupId>
             <artifactId>batik-ext</artifactId>
             <version>1.7</version>
+        </dependency>
+        <!--FastDFS客户端-->
+        <!-- https://mvnrepository.com/artifact/com.github.tobato/fastdfs-client -->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.26.1-RELEASE</version>
         </dependency>
 
     </dependencies>

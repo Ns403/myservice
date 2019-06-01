@@ -2,7 +2,9 @@ package com.myservice.result;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,7 +14,9 @@ import java.util.Map;
 public class Msg {
     private int code;
     private String msg;
-    private Map<String, Object> resultMap = new HashMap<String, Object>();
+    private Integer total;
+    private Map<String, Object> resultMap = new HashMap<>();
+    private List rows = new ArrayList<>();
 
     /**
      * 自定义返回类
@@ -34,8 +38,15 @@ public class Msg {
         return result;
     }
 
-    public Msg add(String key, Object value) {
+    public Msg addMap(String key, Object value) {
+        this.setTotal(1);
         this.getResultMap().put(key, value);
+        return this;
+//        return (Msg) this.getresultMap().put(key, value);
+    }
+    public Msg addList(List value) {
+        this.setTotal(200);
+        this.rows=value;
         return this;
 //        return (Msg) this.getresultMap().put(key, value);
     }

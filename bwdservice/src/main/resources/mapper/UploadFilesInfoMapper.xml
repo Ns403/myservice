@@ -101,6 +101,10 @@
     from tbl_upload_files_info
     <if test="id != null" >
       where id = #{id,jdbcType=INTEGER}
+      and status="1"
+    </if>
+    <if test="id == null" >
+      where status="1"
     </if>
   </select>
 
