@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../../static/js/UploadFilePage.js"></script>
 </head>
 <body>
 
-<form id="ff" method="post" style="padding: 60px;text-align:center">
+<form id="upload_form" method="post" style="padding: 60px;text-align:center" enctype="multipart/form-data">
     <div style="margin-bottom:20px">
         <input id="file_name_id" class="easyui-textbox" name="fileName" style="width:40%" data-options="label:'文件名:'">
     </div>
     <div style="margin-bottom:20px">
-        <input id="file_id" class="easyui-filebox" name="file" style="width:40%"
-               data-options="label:'文件:',buttonText:'上传',onChange:function(newValue,oldValue){
-                   if(oldValue===''){
-                        $('#file_name_id').textbox('setValue', newValue)
-                   }
-               }">
+        <input  class="easyui-filebox" name="file" style="width:40%"
+               data-options="label:'文件:',buttonText:'上传',onChange:fileOperating">
+        <script type="text/javascript">
+
+        </script>
     </div>
     <div style="margin-bottom:20px">
-        <select class="easyui-combobox" name="status" label="文件类型" style="width:40%" data-options="readonly:true">
+        <select class="easyui-combobox" name="fileType" label="文件类型" style="width:40%" data-options="readonly:true">
             <option value=0>文档</option>
             <option value=2>图片</option>
             <option value=3>安装文件</option>
@@ -31,7 +29,7 @@
         </select>
     </div>
     <div style="margin-bottom:20px">
-        <input class="easyui-datetimebox" name="delDate" style="width:40%" data-options="label:'过期时间:'">
+        <input id="del_date" class="easyui-datebox" name="delTime" style="width:40%" data-options="label:'过期时间:',formatter:myformatter,parser:myparser">
     </div>
 </form>
 <div style="text-align:center;padding:5px 0">
