@@ -107,12 +107,12 @@
     </if>
   </select>
 <!--  传id查id,不传查全部-->
-<!--  <select id="selectByPrimaryKeyWithMD5" parameterType="java.lang.String" resultMap="BaseResultMap">-->
-<!--    select-->
-<!--    <include refid="Base_Column_List" />-->
-<!--    from tbl_upload_files_info-->
-<!--    where file_md5 = #{fileMd5,jdbcType=String}-->
-<!--  </select>-->
+  <select id="selectByPrimaryKeyWithMD5" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_upload_files_info
+    where file_md5 = #{fileMd5}
+  </select>
 
 
   <select id="selectByExample" parameterType="com.myservice.bean.UploadFilesInfoExample" resultMap="BaseResultMap">

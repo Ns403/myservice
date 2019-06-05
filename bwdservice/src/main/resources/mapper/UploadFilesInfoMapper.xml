@@ -111,7 +111,7 @@
     select
     <include refid="Base_Column_List" />
     from tbl_upload_files_info
-    where file_md5 = #{fileMd5,jdbcType=String}
+    where file_md5 = #{fileMd5}
   </select>
 
 

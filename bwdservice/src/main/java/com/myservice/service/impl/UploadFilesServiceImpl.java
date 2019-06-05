@@ -55,14 +55,16 @@ public class UploadFilesServiceImpl implements UploadFilesService {
             fileInfoVo.setFileName(fileInfoVo.getFile().getOriginalFilename());
         }
         fileInfoVo.setCreateTime(TimeUtils.timeConversion(new Date()));
+        fileInfoVo.setFileMd5(Md5Utils.getFileMd5(fileInfoVo.getFile()));
         UploadFilesInfo uploadFilesInfo1 = null;
         try {
             uploadFilesInfo1 = uploadFilesInfoMapper.selectByPrimaryKeyWithMD5(fileInfoVo.getFileMd5());
         } catch (Exception e) {
             log.info("唯一不做任何处理");
         }
-        fileInfoVo.setFileMd5(Md5Utils.getFileMd5(fileInfoVo.getFile()));
-        AssertUtils.assertTrue(fileInfoVo.getFileMd5().equals(uploadFilesInfo1.getFileMd5()), "已存在相同文件！");
+        if (uploadFilesInfo1 != null) {
+            AssertUtils.assertTrue(fileInfoVo.getFileMd5().equals(uploadFilesInfo1.getFileMd5()), "已存在相同文件！");
+        }
         StorePath storePath = null;
         try {
             storePath = fastFileStorageClient.uploadFile(fileInfoVo.getFile().getInputStream(), fileInfoVo.getFile().getSize(), getExtension(fileInfoVo.getFile().getOriginalFilename()), null);
