@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<table  class="easyui-datagrid"  style="width:100%;height:80%"
-       data-options="
-				url: 'index',
-				method: 'get',
-				fitColumns: true,
-				singleSelect: true,
-				rownumbers: true,
-				showFooter: true
-			">
-    <thead>
-    <tr>
-        <th data-options="field:'id',width:40">id</th>
-        <th data-options="field:'fileName',width:100">fileName</th>
-        <th data-options="field:'fileType',width:40,align:'right'">fileType</th>
-        <th data-options="field:'fileUrl',width:120,align:'right'">fileUrl</th>
-        <th data-options="field:'status',width:20">status</th>
-        <th data-options="field:'fileMd5',width:100,align:'center'">fileMd5</th>
-        <th data-options="field:'createTime',width:80,align:'center'">createTime</th>
-        <th data-options="field:'delTime',width:80,align:'center'">delTime</th>
-    </tr>
-    </thead>
+<table id="all_files_table" class="easyui-datagrid" style="width:100%;height:80%">
+    <!--       data-options="-->
+    <!--				url: 'index',-->
+    <!--				method: 'get',-->
+    <!--				fitColumns: true,-->
+    <!--				singleSelect: true,-->
+    <!--				rownumbers: true,-->
+    <!--				showFooter: true-->
+    <!--			">-->
+    <!--    <thead>-->
+    <!--    <tr>-->
+    <!--        <th data-options="field:'id',width:40">id</th>-->
+    <!--        <th data-options="field:'fileName',width:100">fileName</th>-->
+    <!--        <th data-options="field:'fileType',width:40,align:'right'">fileType</th>-->
+    <!--        <th data-options="field:'fileUrl',width:120,align:'right'">fileUrl</th>-->
+    <!--        <th data-options="field:'status',width:20">status</th>-->
+    <!--        <th data-options="field:'fileMd5',width:100,align:'center'">fileMd5</th>-->
+    <!--        <th data-options="field:'createTime',width:80,align:'center'">createTime</th>-->
+    <!--        <th data-options="field:'delTime',width:80,align:'center'">delTime</th>-->
+    <!--    </tr>-->
+    <!--    </thead>-->
 </table>
+<script type="text/javascript">
+
+        $("#all_files_table").datagrid({
+            url: "index",
+            method: 'get',
+            fitColumns: true,
+            singleSelect: true,
+            rownumbers: true,
+            showFooter: true,
+            pageSize: 20,
+            columns: [
+                [
+                    {field: 'id', title: 'Id', width: 30,hidden:true},
+                    {field: 'fileName', title: '文件名', width: 80},
+                    {field: 'fileType',title:'文件类型', width: 20},
+                    {field: 'fileUrl',title:'文件地址', width: 150},
+                    {field: 'status',title:'显示状态', width: 20,hidden:true},
+                    {field: 'fileMd5',title:'md5', width: 100,hidden:false},
+                    {field: 'createTime',title:'创建时间', width: 80, align: 'center'},
+                    // {field: 'delTime',title:'到期时间', width: 80, align: 'center'}
+                ]
+            ],
+            // onBeforeLoad: function (param) {
+            //     console.log(param);
+            // },
+            // onLoadSuccess: function (data) {
+            //     console.log(data);
+            // },
+            // onLoadError: function () {
+            //     console.log(1);
+            // }
+        });
+
+</script>
 </body>
 </html>

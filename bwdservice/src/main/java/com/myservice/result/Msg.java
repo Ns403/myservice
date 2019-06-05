@@ -48,7 +48,6 @@ public class Msg {
         this.setTotal(200);
         this.rows=value;
         return this;
-//        return (Msg) this.getresultMap().put(key, value);
     }
 
 

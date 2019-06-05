@@ -16,5 +16,5 @@ public interface UploadFilesService {
      * @param fileInfoVo 返回文件信息
      * @return 0失败，1成功
      */
-    int uploadFile(FileInfoVo fileInfoVo);
+    void uploadFile(FileInfoVo fileInfoVo);
 }

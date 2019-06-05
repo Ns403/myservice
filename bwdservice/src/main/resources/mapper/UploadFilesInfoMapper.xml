@@ -95,17 +95,23 @@
 
 <!--  传id查id,不传查全部-->
   <select id="selectByPrimaryKeyWithAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-
     select
     <include refid="Base_Column_List" />
     from tbl_upload_files_info
     <if test="id != null" >
       where id = #{id,jdbcType=INTEGER}
-      and status="1"
+      and status="0"
     </if>
     <if test="id == null" >
-      where status="1"
+      where status="0"
     </if>
+  </select>
+<!--  传id查id,不传查全部-->
+  <select id="selectByPrimaryKeyWithMD5" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_upload_files_info
+    where file_md5 = #{fileMd5,jdbcType=String}
   </select>
 
 
@@ -168,7 +174,7 @@
     insert into tbl_upload_files_info (id, file_name, file_type, 
       file_url, status, file_md5, 
       create_time, del_time)
-    values (#{id,jdbcType=INTEGER}, #{fileName,jdbcType=VARCHAR}, #{fileType,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{fileName,jdbcType=VARCHAR}, #{fileType,jdbcType=VARCHAR},
       #{fileUrl,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, #{fileMd5,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{delTime,jdbcType=TIMESTAMP})
   </insert>

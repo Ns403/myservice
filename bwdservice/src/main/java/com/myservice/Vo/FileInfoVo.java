@@ -17,6 +17,7 @@ public class FileInfoVo {
      *
      * @mbg.generated Thu May 30 09:25:13 CST 2019
      */
+//    @NotBlank(message = "文件名不能为空")
     private String fileName;
 
     /**
@@ -57,7 +58,7 @@ public class FileInfoVo {
      *
      * @mbg.generated Thu May 30 09:25:13 CST 2019
      */
-    private String delTime;
+//    private String delTime;
     /**
      * 文件
      */
@@ -73,7 +74,6 @@ public class FileInfoVo {
                 ", status='" + status + '\'' +
                 ", fileMd5='" + fileMd5 + '\'' +
                 ", createTime='" + createTime + '\'' +
-                ", delTime='" + delTime + '\'' +
                 '}';
     }
 }

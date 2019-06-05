@@ -21,7 +21,7 @@ public class BwdServiceApplicationTests {
 //        UploadFilesInfoMapper mapper = sqlSession.getMapper(UploadFilesInfoMapper.class);
 //        System.out.println();
 
-        fastFileStorageClient.deleteFile("group1/M00/00/00/aPMbZ1z1cIeADMZpAAXy9HHZEi4778.pdf");
+//        fastFileStorageClient.deleteFile("group1/M00/00/00/aPMbZ1z1cIeADMZpAAXy9HHZEi4778.pdf");
 //        for (int i = 0; i < 100; i++) {
 //            String uuid = UUID.randomUUID().toString().split("-")[0];
 //            mapper.insertSelective(new UploadFilesInfo(null, uuid, "txt", "www.baidu.com", "1", "asdfadsfafasdfadf", new Date(), TimeUtils.timeAddOrSub(new Date(), null, 1, null)));
