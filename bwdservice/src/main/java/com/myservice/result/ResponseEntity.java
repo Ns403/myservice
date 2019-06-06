@@ -85,6 +85,9 @@ public class ResponseEntity<T> {
         return new ResponseEntity(StatusCode.OK.getStatusCode(), StatusCode.OK.getStatusMessage());
     }
 
+    public static ResponseEntity ok(final String message) {
+        return new ResponseEntity(StatusCode.OK.getStatusCode(), message);
+    }
     /**
      * 失败请求,失败状态码自行指定
      *

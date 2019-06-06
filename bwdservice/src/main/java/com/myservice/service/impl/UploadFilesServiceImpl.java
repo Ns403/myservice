@@ -53,15 +53,17 @@ public class UploadFilesServiceImpl implements UploadFilesService {
         AssertUtils.assertTrue(fileInfoVo.getFile().isEmpty(), "上传文件为空！");
         if ("".equals(fileInfoVo.getFileName()) || fileInfoVo.getFileName() == null) {
             fileInfoVo.setFileName(fileInfoVo.getFile().getOriginalFilename());
+        } else {
+            fileInfoVo.setFileName(getFileName(fileInfoVo.getFileName()) +"."+ getExtension(fileInfoVo.getFile().getOriginalFilename()));
+//            log.error("测试》》》》》》》》》{}",fileInfoVo.getFileName());
         }
+
+        ;
+//        AssertUtils.isTrue(true, "测试中");
         fileInfoVo.setCreateTime(TimeUtils.timeConversion(new Date()));
         fileInfoVo.setFileMd5(Md5Utils.getFileMd5(fileInfoVo.getFile()));
-        UploadFilesInfo uploadFilesInfo1 = null;
-        try {
-            uploadFilesInfo1 = uploadFilesInfoMapper.selectByPrimaryKeyWithMD5(fileInfoVo.getFileMd5());
-        } catch (Exception e) {
-            log.info("唯一不做任何处理");
-        }
+        UploadFilesInfo uploadFilesInfo1;
+        uploadFilesInfo1 = uploadFilesInfoMapper.selectByPrimaryKeyWithMD5(fileInfoVo.getFileMd5());
         if (uploadFilesInfo1 != null) {
             AssertUtils.assertTrue(fileInfoVo.getFileMd5().equals(uploadFilesInfo1.getFileMd5()), "已存在相同文件！");
         }
@@ -83,12 +85,15 @@ public class UploadFilesServiceImpl implements UploadFilesService {
             uploadFilesInfoMapper.insertSelective(uploadFilesInfo);
         } catch (Exception e) {
             fastFileStorageClient.deleteFile(storePath.getFullPath());
-            AssertUtils.throwServiceException("保存到数据库异常！",e);
+            AssertUtils.throwServiceException("保存到数据库异常！", e);
         }
 
     }
+    private String getFileName(String fileName) {
+        return StringUtils.substringBefore(fileName, ".");
+    }
 
-    public String getExtension(String fileName) {
+    private String getExtension(String fileName) {
         return StringUtils.substringAfterLast(fileName, ".");
     }
 }

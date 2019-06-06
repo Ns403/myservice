@@ -39,26 +39,55 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width:80px">Submit</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width:80px">Clear</a>
 </div>
+
+<!--<div id="progress_bar"  style="width:40%;"></div>-->
 <script type="text/javascript">
+
+    function progress(msg) {
+        var win = $.messager.progress({
+            title: 'UpLoad',
+            msg: msg
+        });
+        // setTimeout(function(){
+        //     $.messager.progress('close');
+        // },5000)
+    }
+
     function submitForm() {
-        $('#upload_form').form("submit", {
-            url: "upload",
-            onSubmit: function (param) {
-                var isValid = $(this).form('validate');
-                if (!isValid) {
-                    $.messager.progress('close');	// hide progress bar while the form is invalid
-                }
-                return isValid;	// return false will stop the form submission
-            },
-            success: function () {
-                $.messager.progress('close');	// hide progress bar while submit successfully
+        $.messager.confirm("UpLoad", "确认上传吗？", function (blResult) {
+            if (blResult) {
+                progress("正在上传。。。");
+                $('#upload_form').form("submit", {
+                    url: "upload",
+                    onSubmit: function (param) {
+                        var isValid = $(this).form('validate');
+                        if (!isValid) {
+                        }
+
+                        return isValid;	// return false will stop the form submission
+                    },
+                    success: function (data) {
+                        var data = JSON.parse(data);
+                        console.log(data);
+                        if (data.statusCode == 500) {
+                            $.messager.progress('close');
+                            $.messager.alert("UpLoad", '错误码：'+data.statusCode+","+data.statusMessage, "error");
+                        }else if (data.statusCode == 200) {
+                            $.messager.progress('close');
+                            $.messager.alert("UpLoad", data.statusMessage, "info");
+                            clearForm();
+                        }
+                    }
+                })
             }
         })
+
     }
 
     function clearForm() {
         $('#upload_form').form('reset');
     }
+
     /**
      * 上传文件同步文件名
      * @param newValue

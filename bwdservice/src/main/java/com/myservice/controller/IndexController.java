@@ -2,7 +2,6 @@ package com.myservice.controller;
 
 
 import com.myservice.Vo.FileInfoVo;
-import com.myservice.result.Msg;
 import com.myservice.result.ResponseEntity;
 import com.myservice.service.UploadFilesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +33,9 @@ public class IndexController {
      * @return
      */
     @PostMapping("/upload")
-    public Msg uploadFile( FileInfoVo fileInfoVo) {
+    public ResponseEntity uploadFile( FileInfoVo fileInfoVo) {
 
         uploadFilesService.uploadFile(fileInfoVo);
-        return Msg.sucess();
+        return ResponseEntity.ok("文件上传成功！");
     }
 }
