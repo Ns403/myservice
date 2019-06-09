@@ -3,18 +3,23 @@ package com.myservice.controller;
 
 import com.myservice.Vo.FileInfoVo;
 import com.myservice.result.ResponseEntity;
-import com.myservice.service.UploadFilesService;
+import com.myservice.service.FileService;
+import com.myservice.utils.AssertUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.List;
 
 @RestController
 public class IndexController {
     @Autowired
-    UploadFilesService uploadFilesService;
+    FileService filesService;
 
     /**
      * 返回信息
@@ -23,7 +28,7 @@ public class IndexController {
      */
     @GetMapping("/index")
     public ResponseEntity resultInfo() {
-        List<FileInfoVo> filesInfo = uploadFilesService.getFilesInfo();
+        List<FileInfoVo> filesInfo = filesService.getFilesInfo();
         return ResponseEntity.ok().add(1, filesInfo);
     }
 
@@ -35,7 +40,49 @@ public class IndexController {
     @PostMapping("/upload")
     public ResponseEntity uploadFile( FileInfoVo fileInfoVo) {
 
-        uploadFilesService.uploadFile(fileInfoVo);
+        filesService.uploadFile(fileInfoVo);
         return ResponseEntity.ok("文件上传成功！");
+    }
+
+    /**
+     * 下载文件
+     *
+     * @return
+     */
+    @GetMapping("/download")
+    public String downloadFile(FileInfoVo fileInfoVo, HttpServletResponse response) {
+        byte[] bytes = filesService.downloadFile(fileInfoVo);
+        // 这里只是为了整合fastdfs，所以写死了文件格式。需要在上传的时候保存文件名。下载的时候使用对应的格式
+        try {
+            response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileInfoVo.getFileName(), "UTF-8"));
+
+        } catch (Exception e) {
+            AssertUtils.throwServiceException("接口异常，上传失败！",e);
+        }
+        response.setCharacterEncoding("UTF-8");
+        ServletOutputStream outputStream = null;
+        try {
+            outputStream = response.getOutputStream();
+            outputStream.write(bytes);
+        } catch (IOException e) {
+            AssertUtils.throwServiceException("接口异常，上传失败！",e);
+        } finally {
+            try {
+                outputStream.flush();
+                outputStream.close();
+            } catch (IOException e) {
+                AssertUtils.throwServiceException("接口异常，上传失败！",e);
+            }
+        }
+        return null;
+    }
+    /**
+     *
+     * @return
+     */
+    @GetMapping("/delFile")
+    public ResponseEntity delFile(FileInfoVo fileInfoVo) {
+        filesService.delFile(fileInfoVo);
+        return ResponseEntity.ok();
     }
 }
