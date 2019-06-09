@@ -64,6 +64,8 @@ public class FileInfoVo {
      */
     private MultipartFile file;
 
+    private String fileSize;
+
     @Override
     public String toString() {
         return "FileInfoVo{" +

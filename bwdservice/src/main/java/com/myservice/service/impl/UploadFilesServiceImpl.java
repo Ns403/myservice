@@ -42,6 +42,8 @@ public class UploadFilesServiceImpl implements UploadFilesService {
             fileInfoVo.setCreateTime(TimeUtils.timeConversion(uploadFilesInfo.getCreateTime()));
 //            fileInfoVo.setDelTime(TimeUtils.timeConversion(uploadFilesInfo.getDelTime()));
 //            System.out.println(fileInfoVo.toString());
+//            log.error("测试：{}",StorageUnitConversion(uploadFilesInfo.getFileSize()));
+            fileInfoVo.setFileSize(StorageUnitConversion(uploadFilesInfo.getFileSize()));
             fileInfoVos.add(fileInfoVo);
         }
         return fileInfoVos;
@@ -57,8 +59,6 @@ public class UploadFilesServiceImpl implements UploadFilesService {
             fileInfoVo.setFileName(getFileName(fileInfoVo.getFileName()) +"."+ getExtension(fileInfoVo.getFile().getOriginalFilename()));
 //            log.error("测试》》》》》》》》》{}",fileInfoVo.getFileName());
         }
-
-        ;
 //        AssertUtils.isTrue(true, "测试中");
         fileInfoVo.setCreateTime(TimeUtils.timeConversion(new Date()));
         fileInfoVo.setFileMd5(Md5Utils.getFileMd5(fileInfoVo.getFile()));
@@ -80,6 +80,8 @@ public class UploadFilesServiceImpl implements UploadFilesService {
         UploadFilesInfo uploadFilesInfo = new UploadFilesInfo();
         BeanUtils.copyProperties(fileInfoVo, uploadFilesInfo);
         uploadFilesInfo.setCreateTime(new Date());
+        uploadFilesInfo.setFileSize((int) fileInfoVo.getFile().getSize());
+
         log.info("uploadFilesInfo：{}", uploadFilesInfo.toString());
         try {
             uploadFilesInfoMapper.insertSelective(uploadFilesInfo);
@@ -95,5 +97,71 @@ public class UploadFilesServiceImpl implements UploadFilesService {
 
     private String getExtension(String fileName) {
         return StringUtils.substringAfterLast(fileName, ".");
+    }
+
+    private static String StorageUnitConversion(Integer fileSize) {
+        if (fileSize != null) {
+            int i = 0;
+            double resultFileSize = fileSize;
+            while (resultFileSize > 1024) {
+                resultFileSize = fileSize / 1024;
+                i++;
+            }
+            resultFileSize=(double) Math.round(resultFileSize * 100) / 100;
+            switch (StorageUnit.getStorageUnit(i)) {
+                case UNITBUTE:
+                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                case UNITKB:
+                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                case UNITMB:
+                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                case UNITGB:
+                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                case UNITTB:
+                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                case UNITPB:
+                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                default:
+                    return "——";
+            }
+        } else {
+            return "——";
+        }
+
+    }
+
+    private  enum StorageUnit {
+        UNITBUTE(0,"byte"),
+        UNITKB(1, "KB"),
+        UNITMB(2, "MB"),
+        UNITGB(3, "GB"),
+        UNITTB(4, "TB"),
+        UNITPB(5, "PB"),
+
+        ;
+
+        private final Integer unitCode;
+        private final String UnitName;
+        public static StorageUnit getStorageUnit(Integer unitCode){
+            for (StorageUnit storageUnit : values()) {
+                if (storageUnit.getUnitCode().equals(unitCode)) {
+                    return storageUnit;
+                }
+            }
+            return null;
+        }
+
+        StorageUnit(Integer unitCode, String unitName) {
+            this.unitCode = unitCode;
+            this.UnitName = unitName;
+        }
+
+        public Integer getUnitCode() {
+            return unitCode;
+        }
+
+        public String getUnitName() {
+            return UnitName;
+        }
     }
 }

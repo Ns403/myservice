@@ -25,36 +25,41 @@
 </table>
 <script type="text/javascript">
 
-        $("#all_files_table").datagrid({
-            url: "index",
-            method: 'get',
-            fitColumns: true,
-            singleSelect: true,
-            rownumbers: true,
-            showFooter: true,
-            pageSize: 20,
-            columns: [
-                [
-                    {field: 'id', title: 'Id', width: 30,hidden:true},
-                    {field: 'fileName', title: '文件名', width: 80},
-                    {field: 'fileType',title:'文件类型', width: 20},
-                    {field: 'fileUrl',title:'文件地址', width: 150},
-                    {field: 'status',title:'显示状态', width: 20,hidden:true},
-                    {field: 'fileMd5',title:'md5', width: 100,hidden:false},
-                    {field: 'createTime',title:'创建时间', width: 80, align: 'center'},
-                    // {field: 'delTime',title:'到期时间', width: 80, align: 'center'}
-                ]
-            ],
-            // onBeforeLoad: function (param) {
-            //     console.log(param);
-            // },
-            // onLoadSuccess: function (data) {
-            //     console.log(data);
-            // },
-            // onLoadError: function () {
-            //     console.log(1);
-            // }
-        });
+    $("#all_files_table").datagrid({
+        url: "index",
+        method: 'get',
+        fitColumns: true,
+        singleSelect: true,
+        rownumbers: true,
+        showFooter: true,
+        pageSize: 20,
+        columns: [
+            [
+                {field: 'id', title: 'Id', width: 30, hidden: true},
+                {field: 'fileName', title: '文件名', width: 30},
+                {field: 'fileSize', title: '文件大小', width: 10},
+                {field: 'fileType', title: '文件类型', width: 20,hidden: true},
+                {field: 'fileUrl', title: '文件地址', width: 50, hidden: true},
+                {field: 'status', title: '显示状态', width: 20, hidden: true},
+                {field: 'fileMd5', title: 'md5', width: 10, hidden: true},
+                {field: 'createTime', title: '创建时间', width: 60, align: 'center'},
+                // {field: 'delTime',title:'到期时间', width: 80, align: 'center'}
+                {field: "operating", title: "操作", width: 10,align: 'center', formatter: function (value, row, index) {
+                        return "<a href='http://104.243.27.103:91/group1/M00/00/00/aPMbZ1z3_OaACXiCErBrIFXOfso215.mp4'>预览</a>  <a href='#'>下载</a>   <a href='#'>删除</a>";
+                    }
+                }
+            ]
+        ],
+        // onBeforeLoad: function (param) {
+        //     console.log(param);
+        // },
+        // onLoadSuccess: function (data) {
+        //     console.log(data);
+        // },
+        // onLoadError: function () {
+        //     console.log(1);
+        // }
+    });
 
 </script>
 </body>
