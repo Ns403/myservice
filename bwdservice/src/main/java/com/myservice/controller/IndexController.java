@@ -38,7 +38,7 @@ public class IndexController {
      * @return
      */
     @PostMapping("/upload")
-    public ResponseEntity uploadFile( FileInfoVo fileInfoVo) {
+    public ResponseEntity uploadFile(FileInfoVo fileInfoVo) {
 
         filesService.uploadFile(fileInfoVo);
         return ResponseEntity.ok("文件上传成功！");
@@ -49,35 +49,24 @@ public class IndexController {
      *
      * @return
      */
-    @GetMapping("/download")
+    @PostMapping("/download")
     public String downloadFile(FileInfoVo fileInfoVo, HttpServletResponse response) {
         byte[] bytes = filesService.downloadFile(fileInfoVo);
-        // 这里只是为了整合fastdfs，所以写死了文件格式。需要在上传的时候保存文件名。下载的时候使用对应的格式
-        try {
-            response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileInfoVo.getFileName(), "UTF-8"));
-
-        } catch (Exception e) {
-            AssertUtils.throwServiceException("接口异常，上传失败！",e);
+        if (fileInfoVo.getFileName() == null) {
+            AssertUtils.throwServiceException("文件名为空");
         }
-        response.setCharacterEncoding("UTF-8");
-        ServletOutputStream outputStream = null;
-        try {
-            outputStream = response.getOutputStream();
+        // 这里只是为了整合fastdfs，所以写死了文件格式。需要在上传的时候保存文件名。下载的时候使用对应的格式
+        try (ServletOutputStream outputStream = response.getOutputStream()){
+            response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileInfoVo.getFileName(), "UTF-8"));
+            response.setCharacterEncoding("UTF-8");
             outputStream.write(bytes);
         } catch (IOException e) {
-            AssertUtils.throwServiceException("接口异常，上传失败！",e);
-        } finally {
-            try {
-                outputStream.flush();
-                outputStream.close();
-            } catch (IOException e) {
-                AssertUtils.throwServiceException("接口异常，上传失败！",e);
-            }
+            AssertUtils.throwServiceException("接口异常，上传失败！", e);
         }
         return null;
     }
+
     /**
-     *
      * @return
      */
     @GetMapping("/delFile")

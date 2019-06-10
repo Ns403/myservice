@@ -33,22 +33,37 @@
         rownumbers: true,
         showFooter: true,
         pageSize: 20,
+        loadMsg: "正在加载。。。",
+        idField: "id",
+        pagination: true,
         columns: [
             [
                 {field: 'id', title: 'Id', width: 30, hidden: true},
                 {field: 'fileName', title: '文件名', width: 30},
                 {field: 'fileSize', title: '文件大小', width: 10},
-                {field: 'fileType', title: '文件类型', width: 20,hidden: true},
+                {field: 'fileType', title: '文件类型', width: 20, hidden: true},
                 {field: 'fileUrl', title: '文件地址', width: 50, hidden: true},
                 {field: 'status', title: '显示状态', width: 20, hidden: true},
                 {field: 'fileMd5', title: 'md5', width: 10, hidden: true},
-                {field: 'createTime', title: '创建时间', width: 60, align: 'center'},
+                {field: 'createTime', title: '创建时间', width: 30, align: 'center'},
+                {field: 'fastGroup', title: '组别', width: 60, align: 'center', hidden: true},
+                {field: 'fastPath', title: '路径', width: 60, align: 'center', hidden: true},
                 // {field: 'delTime',title:'到期时间', width: 80, align: 'center'}
-                {field: "operating", title: "操作", width: 10,align: 'center', formatter: function (value, row, index) {
-                        return "<a href='http://104.243.27.103:91/group1/M00/00/00/aPMbZ1z3_OaACXiCErBrIFXOfso215.mp4'>预览</a>  <a href='#'>下载</a>   <a href='#'>删除</a>";
+                {
+                    field: "operating",
+                    title: "操作",
+                    width: 10,
+                    align: 'center',
+                    formatter: function (value, row, index) {
+                        var group = "" + row.fastGroup;
+                        var path = "" + row.fastPath;
+                        var preview = "<a href='javascript:add_tab(\"" + row.fileName + "\",\"review\") '  style=\"text-decoration:none;\">预览</a>";
+                        var download = '&emsp;<a class="editcls" onclick="downloadFile(\'' + row.id + '\',\'' + row.fastGroup + '\',\'' + row.fastPath + '\',\'' + row.fileName + '\')" href="javascript:void(0)">下载</a>';
+                        return preview + download;
                     }
                 }
             ]
+
         ],
         // onBeforeLoad: function (param) {
         //     console.log(param);
@@ -60,6 +75,31 @@
         //     console.log(1);
         // }
     });
+
+    function downloadFile(id, grooup, path, name) {
+        // $.post("download", {id: id, fastGroup: grooup, fastPath: path, fileName: name}), function (data) {
+        //     console.log(data)
+        // };
+        $form = $('<form method="post"></form>').appendTo('body');
+        var url = 'download';
+        $form.form('submit', {
+            url: url,
+            dataType: 'text',
+            onSubmit: function (param) {
+                param.id = id;
+                param.fastGroup = grooup;
+                param.fastPath = path;
+                param.fileName = name;
+            },
+            success: function (respose) {
+                $.messager.alert('提示', "下载成功!", 'success');
+            },
+            error: function (respose) {
+                $.messager.alert('提示', "下载失败!", 'error');
+            }
+        });
+        $form.remove();
+    }
 
 </script>
 </body>

@@ -34,4 +34,12 @@ public class pageController {
     public String uploadFilePage() {
         return "filepage/UploadFilePage";
     }
+    /**
+     *返回预览界面
+     * @return
+     */
+    @GetMapping("/review")
+    public String controllerNmae() {
+        return "filepage/review";
+    }
 }

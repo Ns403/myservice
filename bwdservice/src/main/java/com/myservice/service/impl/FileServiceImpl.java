@@ -100,6 +100,12 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public byte[] downloadFile(FileInfoVo fileInfoVo) {
+        if (fileInfoVo == null) {
+            AssertUtils.throwServiceException("指定参数为空");
+        }
+        if (fileInfoVo.getFastGroup() == null||fileInfoVo.getFastPath()==null) {
+            AssertUtils.throwServiceException("指定参数为空");
+        }
         try {
             return fastDFSClientWrapper.downloadFile(fileInfoVo.getFastGroup(), fileInfoVo.getFastPath());
         } catch (IOException e) {
