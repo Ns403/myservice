@@ -5,7 +5,8 @@ import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import com.myservice.Vo.FileInfoVo;
 import com.myservice.bean.UploadFilesInfo;
 import com.myservice.dao.UploadFilesInfoMapper;
-import com.myservice.service.UploadFilesService;
+import com.myservice.service.FileService;
+import com.myservice.service.wrapper.FastDFSClientWrapper;
 import com.myservice.utils.AssertUtils;
 import com.myservice.utils.Md5Utils;
 import com.myservice.utils.TimeUtils;
@@ -16,13 +17,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Service
 @Slf4j
-public class UploadFilesServiceImpl implements UploadFilesService {
+public class FileServiceImpl implements FileService {
     @Value("${service.address}")
     private String serverPath;
 
@@ -31,6 +33,8 @@ public class UploadFilesServiceImpl implements UploadFilesService {
 
     @Autowired
     FastFileStorageClient fastFileStorageClient;
+    @Autowired
+    FastDFSClientWrapper fastDFSClientWrapper;
 
     @Override
     public List<FileInfoVo> getFilesInfo() {
@@ -44,6 +48,7 @@ public class UploadFilesServiceImpl implements UploadFilesService {
 //            System.out.println(fileInfoVo.toString());
 //            log.error("测试：{}",StorageUnitConversion(uploadFilesInfo.getFileSize()));
             fileInfoVo.setFileSize(StorageUnitConversion(uploadFilesInfo.getFileSize()));
+
             fileInfoVos.add(fileInfoVo);
         }
         return fileInfoVos;
@@ -75,7 +80,8 @@ public class UploadFilesServiceImpl implements UploadFilesService {
             AssertUtils.throwServiceException("上传文件失败！！", e);
         }
         fileInfoVo.setFileUrl(serverPath + storePath.getFullPath());
-        log.info("FileInfoVo对象：{}", fileInfoVo.toString());
+        fileInfoVo.setFastGroup(storePath.getGroup());
+        fileInfoVo.setFastPath(storePath.getPath());
 
         UploadFilesInfo uploadFilesInfo = new UploadFilesInfo();
         BeanUtils.copyProperties(fileInfoVo, uploadFilesInfo);
@@ -91,6 +97,22 @@ public class UploadFilesServiceImpl implements UploadFilesService {
         }
 
     }
+
+    @Override
+    public byte[] downloadFile(FileInfoVo fileInfoVo) {
+        try {
+            return fastDFSClientWrapper.downloadFile(fileInfoVo.getFastGroup(), fileInfoVo.getFastPath());
+        } catch (IOException e) {
+            AssertUtils.throwServiceException("下载文件异常",e);
+        }
+        return null;
+    }
+
+    @Override
+    public void delFile(FileInfoVo fileInfoVo) {
+
+    }
+
     private String getFileName(String fileName) {
         return StringUtils.substringBefore(fileName, ".");
     }
@@ -103,11 +125,11 @@ public class UploadFilesServiceImpl implements UploadFilesService {
         if (fileSize != null) {
             int i = 0;
             double resultFileSize = fileSize;
+            resultFileSize=(double) Math.round(resultFileSize * 100) / 100;
             while (resultFileSize > 1024) {
                 resultFileSize = fileSize / 1024;
                 i++;
             }
-            resultFileSize=(double) Math.round(resultFileSize * 100) / 100;
             switch (StorageUnit.getStorageUnit(i)) {
                 case UNITBUTE:
                     return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();

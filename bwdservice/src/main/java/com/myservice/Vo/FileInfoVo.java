@@ -64,7 +64,19 @@ public class FileInfoVo {
      */
     private MultipartFile file;
 
+    /**
+     * 文件大小
+     */
     private String fileSize;
+
+    /**
+     * 文件组别
+     */
+    private String fastGroup;
+    /**
+     * 文件地址
+     */
+    private String fastPath;
 
     @Override
     public String toString() {

@@ -4,7 +4,7 @@ import com.myservice.Vo.FileInfoVo;
 
 import java.util.List;
 
-public interface UploadFilesService {
+public interface FileService {
     /**
      * 查询出所有的文件
      * @return
@@ -17,4 +17,8 @@ public interface UploadFilesService {
      * @return 0失败，1成功
      */
     void uploadFile(FileInfoVo fileInfoVo);
+
+    byte[] downloadFile(FileInfoVo fileInfoVo);
+
+    void delFile(FileInfoVo fileInfoVo);
 }
