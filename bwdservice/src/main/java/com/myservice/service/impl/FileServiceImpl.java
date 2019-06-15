@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -67,16 +67,18 @@ public class FileServiceImpl implements FileService {
 //        AssertUtils.isTrue(true, "测试中");
         fileInfoVo.setCreateTime(TimeUtils.timeConversion(new Date()));
         fileInfoVo.setFileMd5(Md5Utils.getFileMd5(fileInfoVo.getFile()));
-        UploadFilesInfo uploadFilesInfo1;
-        uploadFilesInfo1 = uploadFilesInfoMapper.selectByPrimaryKeyWithMD5(fileInfoVo.getFileMd5());
-        if (uploadFilesInfo1 != null) {
-            AssertUtils.assertTrue(fileInfoVo.getFileMd5().equals(uploadFilesInfo1.getFileMd5()), "已存在相同文件！");
+        UploadFilesInfo filesInfo = uploadFilesInfoMapper.selectByPrimaryKeyWithMD5(fileInfoVo.getFileMd5());
+        if (filesInfo != null) {
+            AssertUtils.assertTrue(fileInfoVo.getFileMd5().equals(filesInfo.getFileMd5()), "已存在相同文件！");
         }
         StorePath storePath = null;
         try {
-            storePath = fastFileStorageClient.uploadFile(fileInfoVo.getFile().getInputStream(), fileInfoVo.getFile().getSize(), getExtension(fileInfoVo.getFile().getOriginalFilename()), null);
+            log.info("上传文件信息为：{}",fileInfoVo.toString());
+//            storePath = fastFileStorageClient.uploadFile(fileInfoVo.getFile().getInputStream(), fileInfoVo.getFile().getSize(), getExtension(fileInfoVo.getFile().getOriginalFilename()), null);
+            storePath = fastDFSClientWrapper.uploadFile(fileInfoVo.getFile());
 //            throw new IOException();
         } catch (Exception e) {
+            log.error("e.getMessage>>>>>{}", e.getMessage());
             AssertUtils.throwServiceException("上传文件失败！！", e);
         }
         fileInfoVo.setFileUrl(serverPath + storePath.getFullPath());
@@ -90,6 +92,7 @@ public class FileServiceImpl implements FileService {
 
         log.info("uploadFilesInfo：{}", uploadFilesInfo.toString());
         try {
+            log.info("uploadFilesInfo:{}",uploadFilesInfo.toString());
             uploadFilesInfoMapper.insertSelective(uploadFilesInfo);
         } catch (Exception e) {
             fastFileStorageClient.deleteFile(storePath.getFullPath());
@@ -108,7 +111,8 @@ public class FileServiceImpl implements FileService {
         }
         try {
             return fastDFSClientWrapper.downloadFile(fileInfoVo.getFastGroup(), fileInfoVo.getFastPath());
-        } catch (IOException e) {
+        } catch (Exception e) {
+            log.error("e.getMessage>>>>>{}", e.getMessage());
             AssertUtils.throwServiceException("下载文件异常",e);
         }
         return null;
@@ -130,25 +134,26 @@ public class FileServiceImpl implements FileService {
     private static String StorageUnitConversion(Integer fileSize) {
         if (fileSize != null) {
             int i = 0;
-            double resultFileSize = fileSize;
-            resultFileSize=(double) Math.round(resultFileSize * 100) / 100;
-            while (resultFileSize > 1024) {
-                resultFileSize = fileSize / 1024;
+            DecimalFormat format = new DecimalFormat("0.00");
+            double result = fileSize;
+            while (result > 1024) {
+                result /= 1024;
                 i++;
             }
+            String format1 = format.format(result);
             switch (StorageUnit.getStorageUnit(i)) {
                 case UNITBUTE:
-                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                    return format1 + " " + StorageUnit.getStorageUnit(i).getUnitName();
                 case UNITKB:
-                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                    return format1 + " " + StorageUnit.getStorageUnit(i).getUnitName();
                 case UNITMB:
-                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                    return format1 + " " + StorageUnit.getStorageUnit(i).getUnitName();
                 case UNITGB:
-                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                    return format1 + " " + StorageUnit.getStorageUnit(i).getUnitName();
                 case UNITTB:
-                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                    return format1 + " " + StorageUnit.getStorageUnit(i).getUnitName();
                 case UNITPB:
-                    return resultFileSize + " " + StorageUnit.getStorageUnit(i).getUnitName();
+                    return format1 + " " + StorageUnit.getStorageUnit(i).getUnitName();
                 default:
                     return "——";
             }

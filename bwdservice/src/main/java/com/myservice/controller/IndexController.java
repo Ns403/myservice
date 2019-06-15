@@ -47,10 +47,9 @@ public class IndexController {
     /**
      * 下载文件
      *
-     * @return
      */
     @PostMapping("/download")
-    public String downloadFile(FileInfoVo fileInfoVo, HttpServletResponse response) {
+    public ResponseEntity downloadFile(FileInfoVo fileInfoVo, HttpServletResponse response) {
         byte[] bytes = filesService.downloadFile(fileInfoVo);
         if (fileInfoVo.getFileName() == null) {
             AssertUtils.throwServiceException("文件名为空");
@@ -61,9 +60,9 @@ public class IndexController {
             response.setCharacterEncoding("UTF-8");
             outputStream.write(bytes);
         } catch (IOException e) {
-            AssertUtils.throwServiceException("接口异常，上传失败！", e);
+            AssertUtils.throwServiceException("接口异常，下载失败！", e);
         }
-        return null;
+        return ResponseEntity.ok("下载成功！");
     }
 
     /**

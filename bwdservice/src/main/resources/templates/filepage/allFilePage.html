@@ -55,11 +55,12 @@
                     width: 10,
                     align: 'center',
                     formatter: function (value, row, index) {
-                        var group = "" + row.fastGroup;
-                        var path = "" + row.fastPath;
-                        var preview = "<a href='javascript:add_tab(\"" + row.fileName + "\",\"review\") '  style=\"text-decoration:none;\">预览</a>";
-                        var download = '&emsp;<a class="editcls" onclick="downloadFile(\'' + row.id + '\',\'' + row.fastGroup + '\',\'' + row.fastPath + '\',\'' + row.fileName + '\')" href="javascript:void(0)">下载</a>';
-                        return preview + download;
+                        var FileExt = row.fileName.replace(/.+\./, "").toLowerCase();
+                        var linkBtn = '<a onclick="downloadFile(\'' + row.id + '\',\'' + row.fastGroup + '\',\'' + row.fastPath + '\',\'' + row.fileName + '\')" href="javascript:void(0)" style="text-decoration:none;">下载</a>';
+                        if (FileExt == "mp4") {
+                            linkBtn += '&emsp;<a onclick="add_tab_review(\'' + row.fileName + '\',\''+row.fileUrl+'\')" href="javascript:void(0)" style="text-decoration:none;">预览</a>';
+                        }
+                        return linkBtn;
                     }
                 }
             ]
@@ -75,6 +76,30 @@
         //     console.log(1);
         // }
     });
+    function add_tab_review(title, fileUrl) {
+        if ($("#main_tab").tabs("exists", title)) {
+            $("#main_tab").tabs("select", title);
+        } else {
+            $("#main_tab").tabs("add", {
+                title: title,
+                // href: url,
+                closable: true,
+                selected: true,
+                content:'<video width=100% height=100%  controls="controls" autoplay="autoplay" preload="auto">\n' +
+                    '    <source src=\''+fileUrl+'\' type="video/mp4">\n' +
+                    '</video>'
+            });
+        }
+    }
+    function downloadProgress(msg) {
+        var win = $.messager.progress({
+            title: 'UpLoad',
+            msg: msg
+        });
+        setTimeout(function(){
+            $.messager.progress('close');
+        },5000)
+    }
 
     function downloadFile(id, grooup, path, name) {
         // $.post("download", {id: id, fastGroup: grooup, fastPath: path, fileName: name}), function (data) {
@@ -82,6 +107,7 @@
         // };
         $form = $('<form method="post"></form>').appendTo('body');
         var url = 'download';
+        downloadProgress("正在准备下载。。。");
         $form.form('submit', {
             url: url,
             dataType: 'text',
@@ -91,11 +117,11 @@
                 param.fastPath = path;
                 param.fileName = name;
             },
-            success: function (respose) {
-                $.messager.alert('提示', "下载成功!", 'success');
+            success: function (data) {
+                $.messager.alert("UpLoad", data.statusMessage, "info");
             },
-            error: function (respose) {
-                $.messager.alert('提示', "下载失败!", 'error');
+            error: function (data) {
+                $.messager.alert("UpLoad", '错误码：'+data.statusCode+","+data.statusMessage, "error");
             }
         });
         $form.remove();

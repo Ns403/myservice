@@ -88,6 +88,10 @@ public class FileInfoVo {
                 ", status='" + status + '\'' +
                 ", fileMd5='" + fileMd5 + '\'' +
                 ", createTime='" + createTime + '\'' +
+                ", file=" + file .getOriginalFilename()+
+                ", fileSize='" + fileSize + '\'' +
+                ", fastGroup='" + fastGroup + '\'' +
+                ", fastPath='" + fastPath + '\'' +
                 '}';
     }
 }

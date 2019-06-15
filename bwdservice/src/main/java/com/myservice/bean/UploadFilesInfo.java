@@ -365,4 +365,21 @@ public class UploadFilesInfo {
     public void setFastPath(String fastPath) {
         this.fastPath = fastPath == null ? null : fastPath.trim();
     }
+
+    @Override
+    public String toString() {
+        return "UploadFilesInfo{" +
+                "id=" + id +
+                ", fileName='" + fileName + '\'' +
+                ", fileSize=" + fileSize +
+                ", fileType='" + fileType + '\'' +
+                ", fileUrl='" + fileUrl + '\'' +
+                ", status='" + status + '\'' +
+                ", fileMd5='" + fileMd5 + '\'' +
+                ", createTime=" + createTime +
+                ", delTime=" + delTime +
+                ", fastGroup='" + fastGroup + '\'' +
+                ", fastPath='" + fastPath + '\'' +
+                '}';
+    }
 }

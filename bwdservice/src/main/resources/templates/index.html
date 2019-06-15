@@ -47,9 +47,17 @@
                 href: url,
                 closable: true,
                 selected: true,
-
             });
         }
+    }
+    function progress(msg) {
+        var win = $.messager.progress({
+            title: 'UpLoad',
+            msg: msg
+        });
+        // setTimeout(function(){
+        //     $.messager.progress('close');
+        // },5000)
     }
 
 </script>
