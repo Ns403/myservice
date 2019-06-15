@@ -57,6 +57,7 @@ public class FastDFSClientWrapper {
         }
         return null;
     }
+
     private String getFileName(String fileName) {
         return StringUtils.substringBefore(fileName, ".");
     }
