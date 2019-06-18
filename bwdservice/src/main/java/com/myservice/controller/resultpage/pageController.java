@@ -42,4 +42,12 @@ public class pageController {
     public String controllerNmae() {
         return "filepage/review";
     }
+
+    /**
+     * 返回测试上传的界面
+     */
+    @GetMapping("/WebUploadPage")
+    public String webUploadPage() {
+        return "filepage/WebUploadPage";
+    }
 }

@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>MyService</title>
+    <link href="https://cdn.staticfile.org/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.10.2/jquery.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/webuploader/0.1.5/webuploader.min.js"></script>
+<!--    <script type="text/javascript" src="/jquery/jquery.js"></script>-->
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="/easyui/easyloader.js"></script>
     <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css">
+
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north',border:false" style="height:60px;background:#bdbdbd;">
@@ -21,6 +26,9 @@
        <ul class="nav">
             <li><a href="javascript:add_tab('所有文件','allFilePage')" style="text-decoration:none;">所有文件</a></li>
         </ul>
+        <ul class="nav">
+            <li><a href="javascript:add_tab('测试页面','WebUploadPage')" style="text-decoration:none;">测试页面</a></li>
+        </ul>
     </div>
 <!--        <div title="Ajax" data-options="href:'http://www.baidu.com'" ></div>-->
 </div>
@@ -30,6 +38,14 @@
     <div id="main_tab" class="easyui-tabs" style="width: 100%;height: 100%;">
         <div title="主页" style="padding:10px;background:#bdbdbd">
             <h1 style="font-size:25px">欢迎来到寜的My Service</h1>
+            <div id="uploader" class="wu-example">
+                <!--用来存放文件信息-->
+                <div id="thelist" class="uploader-list"></div>
+                <div class="btns">
+                    <div id="picker">选择文件</div>
+                    <button id="ctlBtn" class="btn btn-default">开始上传</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

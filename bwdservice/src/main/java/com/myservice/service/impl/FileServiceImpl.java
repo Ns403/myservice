@@ -74,8 +74,8 @@ public class FileServiceImpl implements FileService {
         StorePath storePath = null;
         try {
             log.info("上传文件信息为：{}",fileInfoVo.toString());
-//            storePath = fastFileStorageClient.uploadFile(fileInfoVo.getFile().getInputStream(), fileInfoVo.getFile().getSize(), getExtension(fileInfoVo.getFile().getOriginalFilename()), null);
-            storePath = fastDFSClientWrapper.uploadFile(fileInfoVo.getFile());
+            storePath = fastFileStorageClient.uploadFile(fileInfoVo.getFile().getInputStream(), fileInfoVo.getFile().getSize(), getExtension(fileInfoVo.getFile().getOriginalFilename()), null);
+//            storePath = fastDFSClientWrapper.uploadFile(fileInfoVo.getFile());
 //            throw new IOException();
         } catch (Exception e) {
             log.error("e.getMessage>>>>>{}", e.getMessage());
