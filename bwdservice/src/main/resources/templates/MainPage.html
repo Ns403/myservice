@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>My Service</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/ie10-viewport-bug-workaround.css">
+    <script type="text/javascript" src="/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <!--    头部-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="MainPage">My Service</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <!--                    <li><a href="#">Settings</a></li>-->
+                    <!--                    <li><a href="#">Profile</a></li>-->
+                    <!--                    <li><a href="#">Help</a></li>-->
+                </ul>
+                <!--                <form class="navbar-form navbar-right">-->
+                <!--                    <input type="text" class="form-control" placeholder="Search...">-->
+                <!--                </form>-->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!--导航窗口-->
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">所有文件 <span class="sr-only">(主页)</span></a></li>
+                    <li><a href="#">上传文件</a></li>
+                    <li><a href="#">敬请期待</a></li>
+                </ul>
+
+            </div>
+            <!--内容页-->
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1 class="page-header">文件管理</h1>
+                <div class="row placeholders">
+                    <table id="all_file_info" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th class="text-center">文件名</th>
+                            <th class="text-center">文件大小</th>
+                            <th class="text-center">文件类型</th>
+                            <th class="text-center" hidden=true>文件地址</th>
+                            <th class="text-center" hidden=true>状态</th>
+                            <th class="text-center">创建时间</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+<!--                显示分页信息-->
+                <div class="row">
+                    <div class="col-md-5 ">
+                        <span class="col-md-3 ">
+                            当前第
+                        </span>
+                        <span class="col-md-3 col-md-pull-2">
+                            <input id="pageNumCurrent" type="number" class="form-control input-sm">
+                        </span>
+                        <span class="col-md-6 col-md-pull-3" id="page_info_area">
+
+                        </span>
+                    </div>
+                    <div class="col-md-8 col-md-offset-5" id="paging_info">
+                    </div>
+                </div>
+                <!--排版内容-->
+                <!--                <h2 class="sub-header">Section title</h2>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Header</th>
+                                            <th>Header</th>
+                                            <th>Header</th>
+                                            <th>Header</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1,001</td>
+                                            <td>Lorem</td>
+                                            <td>ipsum</td>
+                                            <td>dolor</td>
+                                            <td>sit</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1,002</td>
+                                            <td>amet</td>
+                                            <td>consectetur</td>
+                                            <td>adipiscing</td>
+                                            <td>elit</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>-->
+
+
+                <!-- 预览模态框 -->
+                <div class="modal fade bs-example-modal-lg" id="preview_file_model" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="preview_file_model_label"></h4>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+
+    $(function () {
+        getFilePageInfo(1);
+
+    });
+
+    /**
+     * 请求获取页面数据
+     * @param pn 页数
+     */
+    function getFilePageInfo(pn) {
+        $.ajax({
+            url: "index",
+            data: "pn=" + pn,
+            type: "get",
+            success: function (result) {
+                build_file_info_html(result.responseContent.pageInfo.list);
+                build_page_info(result.responseContent.pageInfo);
+                build_page_nav(result.responseContent.pageInfo);
+            }
+        });
+    }
+
+    /**
+     * 页面显示内容的html
+     * @param result
+     */
+    function build_file_info_html(result) {
+        var file_info = $("#all_file_info tbody");
+        file_info.empty();
+        $.each(result, function (index, item) {
+            var id = $("<td></td>").append(index + 1);
+            var fileId = $("<td></td>").append(item.id).attr("hidden", true);
+            var fileName = $("<td></td>").append(item.fileName);
+            var fileType = $("<td></td>").append(item.fileType);
+            var fileUrl = $("<td></td>").append(item.fileUrl).attr("hidden", true);
+            var statuc = $("<td></td>").append(item.statuc).attr("hidden", true);
+            var fileSize = $("<td></td>").append(item.fileSize);
+            var createTime = $("<td></td>").append(item.createTime);
+            var previewbtn = $("<a></a>").addClass("btn btn-primary btn-xs preview_file").append($("<span></span>").addClass("glyphicon glyphicon-play-circle")).append(" 预览").attr("href", item.fileUrl);
+            var downloadBtn = $("<a></a>").addClass("btn btn-info btn-xs").append($("<span></span>").addClass("glyphicon glyphicon-save")).append(" 下载");
+            $("<tr></tr>").append(id)
+                .append(fileId)
+                .append(fileName)
+                .append(fileSize)
+                .append(fileType)
+                .append(fileUrl)
+                .append(statuc)
+                .append(createTime)
+                .append(displayBtn(previewbtn, downloadBtn, item.fileName, item.fileUrl))
+                .appendTo(file_info);
+        });
+    }
+
+    /**
+     * 处理按钮是否显示
+     */
+    function displayBtn(previewbtn, downloadBtn, fileName, url) {
+        var arr = url.split('.');
+        var suffix = arr[arr.length - 1];
+        // console.log(previewbtn );
+        switch (suffix) {
+            case "mp4":
+                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileName + '\',\'' + url + '\')');
+                break;
+            case "png":
+                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileName + '\',\'' + url + '\')');
+                break;
+            case "mp3":
+                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileName + '\',\'' + url + '\')');
+                break;
+            default:
+                previewbtn.addClass("disabled");
+                break;
+        }
+        var btn = $("<td></td>").addClass("text-left").append(downloadBtn).append(previewbtn);
+        return btn;
+    }
+
+    function preview_file(flieName, url) {
+        // console.log(url);
+        $("#preview_file_model").modal({
+            show: true,
+            backdrop: "static",
+        });
+        var preview_file_model_info = $("#preview_file_model div[class='modal-body']");
+        var arr = url.split('.');
+        var suffix = arr[arr.length - 1];
+        switch (suffix) {
+            case "mp4":
+                $("<video  controls=\"\" autoplay=\"\"  width=\"870\" name=\"media\"></video>").append($("<source>").attr("src", url).attr("type", "video/mp4")).appendTo(preview_file_model_info);
+                break;
+            case "png":
+                $("<img style=\"-webkit-user-select: none;cursor: zoom-in;\" width=\"870\"/>").attr("src", url).appendTo(preview_file_model_info);
+                break;
+            case "mp3":
+                $("<video  controls=\"\" autoplay=\"\" width=\"870\"  height=\"60\" name=\"media\"></video>").append($("<source>").attr("src", url).attr("type", "audio/mpeg")).appendTo(preview_file_model_info);
+                break;
+            default:
+                break;
+        }
+        console.log($("#preview_file_model_label").text(flieName));
+    }
+
+    $('#preview_file_model').on('hidden.bs.modal', function (e) {
+        $("#preview_file_model div[class='modal-body']").empty();
+    })
+    /**
+     * 显示分页信息
+     */
+    function build_page_info(result) {
+        var pageInfo = result;
+        $("#pageNumCurrent").val(pageInfo.pageNum);
+        $("#page_info_area").empty().append("页，共" + pageInfo.pages + "页，共" + pageInfo.total + "条记录");
+        //控制进度条位置
+        var position = parseInt(pageInfo.pageNum / pageInfo.pages * 100) + "%";
+        $("#schedule_page").attr("style", "width: " + position).text(position);
+        allPages = pageInfo.pages;
+        currentPage = pageInfo.pageNum;
+
+
+    }
+
+    /**
+     * 显示分页条
+     */
+    function build_page_nav(result) {
+        $("#paging_info").empty();
+        var pageInfo = result;
+        //li标签
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href", "#"));
+        if (pageInfo.isFirstPage) {
+            firstPageLi.addClass("disabled");
+        }
+        firstPageLi.click(function () {
+            to_page(1);
+        });
+
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;").attr("href", "#"));
+        if (!pageInfo.hasPreviousPage) {
+            prePageLi.addClass("disabled");
+        }
+        prePageLi.click(function () {
+            to_page(pageInfo.prePage);
+        });
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;").attr("href", "#"));
+        if (!pageInfo.hasNextPage) {
+            nextPageLi.addClass("disabled");
+        }
+        nextPageLi.click(function () {
+            to_page(pageInfo.nextPage);
+        });
+
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href", "#"));
+        if (pageInfo.isLastPage) {
+            lastPageLi.addClass("disabled");
+        }
+        lastPageLi.click(function () {
+            to_page(pageInfo.pages);
+        });
+
+        //ul标签
+        var ul = $("<ul></ul>").addClass("pagination").append(firstPageLi).append(prePageLi);
+
+        $.each(pageInfo.navigatepageNums, function (index, item) {
+            //页码标签
+            var pageNumLi = $("<li></li>").append($("<a></a>").append(item).attr("href", "#"));
+            if (pageInfo.pageNum == item) {
+                pageNumLi.addClass("active");
+            }
+            pageNumLi.click(function () {
+                to_page(item);
+            });
+            ul.append(pageNumLi);
+        });
+        ul.append(nextPageLi).append(lastPageLi);
+        var navPageUl = $("<nav></nav>").append(ul);
+        navPageUl.appendTo("#paging_info");
+    }
+
+    /**
+     * 输入之后跳转
+     */
+    $("#pageNumCurrent").blur(function () {
+        to_page( $("#pageNumCurrent").val());
+    });
+</script>
+<!--                <video controls="" autoplay="" name="media"><source src="http://104.243.27.103:91/group1/M00/00/00/aPMbZ10ABO6AeBlZErBrIFXOfso472.mp4" type="video/mp4"></video>-->
+<!--                <img style="-webkit-user-select: none;cursor: zoom-in;" src="http://104.243.27.103:91/group1/M00/00/00/aPMbZ1z_2ESAM_iDAB6jhC7jXK8883.png" width="1067" height="600">-->
+<!--                <video controls="" autoplay="" name="media"><source src="http://104.243.27.103:91/group1/M00/00/00/aPMbZ10ATqSAX1XGAJ_y68PUb1Q494.mp3" type="audio/mpeg"></video>-->
+</html>

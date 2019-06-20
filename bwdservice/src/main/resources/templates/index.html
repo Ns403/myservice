@@ -2,79 +2,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MyService</title>
-    <link href="https://cdn.staticfile.org/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.10.2/jquery.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/webuploader/0.1.5/webuploader.min.js"></script>
-<!--    <script type="text/javascript" src="/jquery/jquery.js"></script>-->
-    <script type="text/javascript" src="/easyui/jquery.min.js"></script>
-    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="/easyui/easyloader.js"></script>
-    <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css">
-
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/cover.css">
 </head>
-<body class="easyui-layout">
-<div data-options="region:'north',border:false" style="height:60px;background:#bdbdbd;">
-    <h3>My Service</h3>
-</div>
-<div data-options="region:'west',split:false,title:'菜单'" class="easyui-accordion" style="width:150px;background:#bdbdbd;">
-    <div title="文件存储"  style="overflow:auto;">
-        <ul class="nav">
-            <li><a href="javascript:add_tab('上传文件','uploadFilePage')" style="text-decoration:none;">上传文件</a></li>
-        </ul>
-       <ul class="nav">
-            <li><a href="javascript:add_tab('所有文件','allFilePage')" style="text-decoration:none;">所有文件</a></li>
-        </ul>
-        <ul class="nav">
-            <li><a href="javascript:add_tab('测试页面','WebUploadPage')" style="text-decoration:none;">测试页面</a></li>
-        </ul>
-    </div>
-<!--        <div title="Ajax" data-options="href:'http://www.baidu.com'" ></div>-->
-</div>
-<div data-options="region:'east',split:false,collapsed:true,title:'工具'" style="width:150px;background:#bdbdbd;padding:10px;">east region</div>
-<div data-options="region:'south',border:false,title:'文件信息'" style="height:100px;background:#bdbdbd;padding:1px;"></div>
-<div data-options="region:'center'" >
-    <div id="main_tab" class="easyui-tabs" style="width: 100%;height: 100%;">
-        <div title="主页" style="padding:10px;background:#bdbdbd">
-            <h1 style="font-size:25px">欢迎来到寜的My Service</h1>
-            <div id="uploader" class="wu-example">
-                <!--用来存放文件信息-->
-                <div id="thelist" class="uploader-list"></div>
-                <div class="btns">
-                    <div id="picker">选择文件</div>
-                    <button id="ctlBtn" class="btn btn-default">开始上传</button>
+<body>
+<!--    空行-->
+<!--    <div>-->
+<!--&lt;!&ndash;        空行&ndash;&gt;-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--    </div>-->
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">MyService</h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                                <li class="active"><a href="#">Home</a></li>
+<!--                                <li><a href="#">Features</a></li>-->
+<!--                                <li><a href="#">Contact</a></li>-->
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
+
+                <div class="inner cover">
+                    <h1 class="cover-heading">欢迎来到MyService.</h1>
+                    <p class="lead">
+                        <a href="MainPage" class="btn btn-lg btn-default">Enter</a>
+                    </p>
+                </div>
+
+                <!--<div class="mastfoot">
+                    <div class="inner">
+                        <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                    </div>
+                </div>-->
             </div>
         </div>
     </div>
-</div>
 </body>
-<script type="text/javascript">
-    /**
-     * 添加标签页
-     */
-    function add_tab(title, url) {
-        if ($("#main_tab").tabs("exists", title)) {
-            $("#main_tab").tabs("select", title);
-        } else {
-            $("#main_tab").tabs("add", {
-                title: title,
-                href: url,
-                closable: true,
-                selected: true,
-            });
-        }
-    }
-    function progress(msg) {
-        var win = $.messager.progress({
-            title: 'UpLoad',
-            msg: msg
-        });
-        // setTimeout(function(){
-        //     $.messager.progress('close');
-        // },5000)
-    }
+<script th:inline="javascript">
 
 </script>
 </html>

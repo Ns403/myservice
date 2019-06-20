@@ -35,14 +35,14 @@ public class ResponseEntity<T> {
      * 响应内容
      **/
     private volatile T responseContent ;
-    /**
-     * EasyUI数据网格需要的字段
-     */
-    private volatile Integer total;
-    /**
-     * 响应的表格数据
-     */
-    private volatile T rows;
+//    /**
+//     * EasyUI数据网格需要的字段
+//     */
+//    private volatile Integer total;
+//    /**
+//     * 响应的表格数据
+//     */
+//    private volatile T rows;
 
 
     public ResponseEntity() {
@@ -59,12 +59,12 @@ public class ResponseEntity<T> {
         this.responseContent = responseContent;
     }
 
-    public ResponseEntity(String statusCode, String statusMessage, Integer total, T rows) {
-        this.statusCode = statusCode;
-        this.statusMessage = statusMessage;
-        this.total = total;
-        this.rows = rows;
-    }
+//    public ResponseEntity(String statusCode, String statusMessage, Integer total, T rows) {
+//        this.statusCode = statusCode;
+//        this.statusMessage = statusMessage;
+//        this.total = total;
+//        this.rows = rows;
+//    }
 
     public static ResponseEntity empty() {
         return new ResponseEntity();
@@ -88,6 +88,7 @@ public class ResponseEntity<T> {
     public static ResponseEntity ok(final String message) {
         return new ResponseEntity(StatusCode.OK.getStatusCode(), message);
     }
+
     /**
      * 失败请求,失败状态码自行指定
      *
@@ -116,24 +117,24 @@ public class ResponseEntity<T> {
         return this;
     }
 
-    /**
-     * 返回easyUI的数据
-     */
-    public ResponseEntity<T> add(final Integer total, final List<Object> rows) {
-        if (null == this.rows) {
-            this.rows = (T) new ArrayList<Object>();
-            List<Object> list = (List<Object>) this.rows;
-            list.addAll(rows);
-            this.total = total;
-            return this;
-        }
-        if (!(this.rows instanceof List)) {
-            return this;
-        }
-        this.total = total;
-        ((List) this.rows).addAll(rows);
-        return this;
-    }
+//    /**
+//     * 返回easyUI的数据
+//     */
+//    public ResponseEntity<T> add(final Integer total, final List<Object> rows) {
+//        if (null == this.rows) {
+//            this.rows = (T) new ArrayList<Object>();
+//            List<Object> list = (List<Object>) this.rows;
+//            list.addAll(rows);
+//            this.total = total;
+//            return this;
+//        }
+//        if (!(this.rows instanceof List)) {
+//            return this;
+//        }
+//        this.total = total;
+//        ((List) this.rows).addAll(rows);
+//        return this;
+//    }
 
 
     /**

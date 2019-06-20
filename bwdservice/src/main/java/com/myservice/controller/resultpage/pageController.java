@@ -34,8 +34,10 @@ public class pageController {
     public String uploadFilePage() {
         return "filepage/UploadFilePage";
     }
+
     /**
-     *返回预览界面
+     * 返回预览界面
+     *
      * @return
      */
     @GetMapping("/review")
@@ -49,5 +51,13 @@ public class pageController {
     @GetMapping("/WebUploadPage")
     public String webUploadPage() {
         return "filepage/WebUploadPage";
+    }
+
+    /**
+     * z主页面
+     */
+    @GetMapping("/MainPage")
+    public String getMainPage() {
+        return "MainPage";
     }
 }

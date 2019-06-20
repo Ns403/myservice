@@ -1,6 +1,8 @@
 package com.myservice.controller;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.myservice.Vo.FileInfoVo;
 import com.myservice.result.ResponseEntity;
 import com.myservice.service.FileService;
@@ -8,6 +10,7 @@ import com.myservice.utils.AssertUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletOutputStream;
@@ -27,9 +30,11 @@ public class IndexController {
      * @return
      */
     @GetMapping("/index")
-    public ResponseEntity resultInfo() {
+    public ResponseEntity resultInfo(@RequestParam(value = "pn",defaultValue = "1") Integer PageNo) {
+        PageHelper.startPage(PageNo, 10);
         List<FileInfoVo> filesInfo = filesService.getFilesInfo();
-        return ResponseEntity.ok().add(1, filesInfo);
+        PageInfo<FileInfoVo> pageInfo=new PageInfo<>(filesInfo,5);
+        return ResponseEntity.ok().add("pageInfo", pageInfo);
     }
 
     /**
@@ -39,7 +44,6 @@ public class IndexController {
      */
     @PostMapping("/upload")
     public ResponseEntity uploadFile(FileInfoVo fileInfoVo) {
-
         filesService.uploadFile(fileInfoVo);
         return ResponseEntity.ok("文件上传成功！");
     }
