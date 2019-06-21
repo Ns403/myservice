@@ -69,19 +69,8 @@
                         </tbody>
                     </table>
                 </div>
-<!--                显示分页信息-->
+                <!--                显示分页信息-->
                 <div class="row">
-                    <div class="col-md-5 ">
-                        <span class="col-md-3 ">
-                            当前第
-                        </span>
-                        <span class="col-md-3 col-md-pull-2">
-                            <input id="pageNumCurrent" type="number" class="form-control input-sm">
-                        </span>
-                        <span class="col-md-6 col-md-pull-3" id="page_info_area">
-
-                        </span>
-                    </div>
                     <div class="col-md-8 col-md-offset-5" id="paging_info">
                     </div>
                 </div>
@@ -161,7 +150,7 @@
             type: "get",
             success: function (result) {
                 build_file_info_html(result.responseContent.pageInfo.list);
-                build_page_info(result.responseContent.pageInfo);
+                // build_page_info(result.responseContent.pageInfo);
                 build_page_nav(result.responseContent.pageInfo);
             }
         });
@@ -176,7 +165,6 @@
         file_info.empty();
         $.each(result, function (index, item) {
             var id = $("<td></td>").append(index + 1);
-            var fileId = $("<td></td>").append(item.id).attr("hidden", true);
             var fileName = $("<td></td>").append(item.fileName);
             var fileType = $("<td></td>").append(item.fileType);
             var fileUrl = $("<td></td>").append(item.fileUrl).attr("hidden", true);
@@ -184,45 +172,52 @@
             var fileSize = $("<td></td>").append(item.fileSize);
             var createTime = $("<td></td>").append(item.createTime);
             var previewbtn = $("<a></a>").addClass("btn btn-primary btn-xs preview_file").append($("<span></span>").addClass("glyphicon glyphicon-play-circle")).append(" 预览").attr("href", item.fileUrl);
-            var downloadBtn = $("<a></a>").addClass("btn btn-info btn-xs").append($("<span></span>").addClass("glyphicon glyphicon-save")).append(" 下载");
+            var fileInfo=JSON.stringify(item);
+            var downloadBtn = $("<a></a>").addClass("btn btn-info btn-xs")
+                .append($("<span></span>").addClass("glyphicon glyphicon-save"))
+                .append("下载")
+                .attr("href", "javascript:void(0)")
+                .attr("onclick", 'download_file(\''+fileInfo+'\')');
             $("<tr></tr>").append(id)
-                .append(fileId)
                 .append(fileName)
                 .append(fileSize)
                 .append(fileType)
                 .append(fileUrl)
                 .append(statuc)
                 .append(createTime)
-                .append(displayBtn(previewbtn, downloadBtn, item.fileName, item.fileUrl))
+                .append(displayBtn(previewbtn, downloadBtn, item))
                 .appendTo(file_info);
         });
     }
 
     /**
-     * 处理按钮是否显示
+     * 处理按钮是否禁用
      */
-    function displayBtn(previewbtn, downloadBtn, fileName, url) {
-        var arr = url.split('.');
+    function displayBtn(previewbtn, downloadBtn,fileInfo) {
+        var arr = fileInfo.fileUrl.split('.');
         var suffix = arr[arr.length - 1];
         // console.log(previewbtn );
         switch (suffix) {
             case "mp4":
-                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileName + '\',\'' + url + '\')');
+                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileInfo.fileName + '\',\'' + fileInfo.fileUrl + '\')');
                 break;
             case "png":
-                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileName + '\',\'' + url + '\')');
+                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileInfo.fileName + '\',\'' +  fileInfo.fileUrl + '\')');
                 break;
             case "mp3":
-                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileName + '\',\'' + url + '\')');
+                previewbtn.attr("href", "javascript:void(0)").attr("onclick", 'preview_file(\'' + fileInfo.fileName + '\',\'' +  fileInfo.fileUrl + '\')');
                 break;
             default:
                 previewbtn.addClass("disabled");
                 break;
         }
-        var btn = $("<td></td>").addClass("text-left").append(downloadBtn).append(previewbtn);
+        var btn = $("<td></td>").addClass("text-left").append(downloadBtn).append("&nbsp;").append(previewbtn);
         return btn;
     }
 
+    /**
+     * 分文件类型预览
+     */
     function preview_file(flieName, url) {
         // console.log(url);
         $("#preview_file_model").modal({
@@ -248,24 +243,12 @@
         console.log($("#preview_file_model_label").text(flieName));
     }
 
+    /**
+     * 关闭之后清空模态框
+     */
     $('#preview_file_model').on('hidden.bs.modal', function (e) {
         $("#preview_file_model div[class='modal-body']").empty();
-    })
-    /**
-     * 显示分页信息
-     */
-    function build_page_info(result) {
-        var pageInfo = result;
-        $("#pageNumCurrent").val(pageInfo.pageNum);
-        $("#page_info_area").empty().append("页，共" + pageInfo.pages + "页，共" + pageInfo.total + "条记录");
-        //控制进度条位置
-        var position = parseInt(pageInfo.pageNum / pageInfo.pages * 100) + "%";
-        $("#schedule_page").attr("style", "width: " + position).text(position);
-        allPages = pageInfo.pages;
-        currentPage = pageInfo.pageNum;
-
-
-    }
+    });
 
     /**
      * 显示分页条
@@ -325,12 +308,43 @@
         navPageUl.appendTo("#paging_info");
     }
 
-    /**
-     * 输入之后跳转
-     */
-    $("#pageNumCurrent").blur(function () {
-        to_page( $("#pageNumCurrent").val());
-    });
+    function download_file(fileInfo) {
+        var fileObj=JSON.parse(fileInfo);
+        var status = confirm("确认下载&nbsp;" + fileObj.fileName + "&nbsp;吗？");
+        if (status) {
+            //动态创建表单加到fbody中，最后删除表单
+            var exportForm = $('<form action=\'download\' method="post"></form>');
+            exportForm.append('<input type=\'hidden\' name=\'id\' value=\'' + fileObj.id + '\' />');
+            exportForm.append('<input type=\'hidden\' name=\'fileName\' value=\'' + fileObj.fileName + '\' />');
+            exportForm.append('<input type=\'hidden\' name=\'fastGroup\' value=\'' + fileObj.fastGroup + '\' />');
+            exportForm.append('<input type=\'hidden\' name=\'fastPath\' value=\'' + fileObj.fastPath + '\' />');
+            exportForm.appendTo("body");
+            exportForm.submit();
+            exportForm.remove();
+        } else {
+            alert("已取消！");
+        }
+
+        // $form = $('<form method="post"></form>').appendTo('body');
+        var url = 'download';
+        // $.ajax({
+        //     url: url,
+        //     type: "post",
+        //     data: {
+        //         id: fileInfo.id,
+        //         fileName: fileInfo.fileName,
+        //         fastGroup: fileInfo.fastGroup,
+        //         fastPath: fileInfo.fastPath
+        //     },
+        //     success:function (result) {
+        //             alert(result.statusMessage);
+        //     }
+        //
+        // });
+        //
+        // $form.remove();
+    }
+
 </script>
 <!--                <video controls="" autoplay="" name="media"><source src="http://104.243.27.103:91/group1/M00/00/00/aPMbZ10ABO6AeBlZErBrIFXOfso472.mp4" type="video/mp4"></video>-->
 <!--                <img style="-webkit-user-select: none;cursor: zoom-in;" src="http://104.243.27.103:91/group1/M00/00/00/aPMbZ1z_2ESAM_iDAB6jhC7jXK8883.png" width="1067" height="600">-->
