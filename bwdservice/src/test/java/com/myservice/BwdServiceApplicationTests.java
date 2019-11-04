@@ -1,6 +1,5 @@
 package com.myservice;
 
-import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class BwdServiceApplicationTests {
     @Autowired
     SqlSession sqlSession;
-    @Autowired
-    FastFileStorageClient fastFileStorageClient;
 
     @Test
     public void contextLoads() {

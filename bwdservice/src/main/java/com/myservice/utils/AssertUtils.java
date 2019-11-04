@@ -3,8 +3,8 @@ package com.myservice.utils;
 import com.myservice.exception.DaoException;
 import com.myservice.exception.ResourceNotFoundException;
 import com.myservice.exception.ServiceException;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.helpers.FormattingTuple;
+import org.springframework.util.StringUtils;
 
 import java.util.Collection;
 import java.util.Map;
@@ -78,7 +78,7 @@ public abstract class AssertUtils {
 			throwServiceException(format, params);
 		}
 
-		if (obj instanceof String && StringUtils.isBlank((String) obj)) {
+		if (obj instanceof String && StringUtils.isEmpty( obj)) {
 			throwServiceException(format, params);
 		}
 
@@ -115,7 +115,7 @@ public abstract class AssertUtils {
 	 *
 	 * @param condition
 	 *            : 断言条件
-	 * @param message
+	 * @param format
 	 *            : 错误信息
 	 * @throws ServiceException
 	 */
@@ -164,7 +164,7 @@ public abstract class AssertUtils {
 	 *
 	 * @param condition
 	 *            : 断言条件
-	 * @param message
+	 * @param format
 	 *            : 错误信息
 	 * @throws ServiceException
 	 */
