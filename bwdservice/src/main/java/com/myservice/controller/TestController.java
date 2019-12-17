@@ -1,16 +1,20 @@
 package com.myservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.myservice.result.ResultEnum;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.*;
+
 
 /**
  * @author 10479
  */
 @RestController
-public class TestController {
-    @GetMapping("/test")
-    public String resultString(){
-        return "11231231";
+public class TestController  {
+    @PostMapping("/test")
+    public Object resultString(){
+        return ResultEnum.REQUEST_OK.wrap();
     }
+
 }
