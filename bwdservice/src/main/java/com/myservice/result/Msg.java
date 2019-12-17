@@ -16,6 +16,9 @@ public class Msg {
     private String msg;
     private Object data;
 
+    public Msg() {
+    }
+
     public Msg(int code, String msg) {
         this.code = code;
         this.msg = msg;

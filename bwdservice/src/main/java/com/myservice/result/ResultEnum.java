@@ -1,9 +1,7 @@
 package com.myservice.result;
 
-import lombok.Data;
 import lombok.Getter;
 
-import java.util.regex.PatternSyntaxException;
 /**
  * @author 10479
  */
